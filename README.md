@@ -3,7 +3,7 @@ Quickly thrown together faucet. Currently set to give out 10 BTN a pop. Limiting
 ## Running this
 First make sure bitcoinnovad is running and fully sync'd.
 Then start `bitcoinnova-service` with these args:
-`/path/to/./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpassword
+`./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpassword
 
 
 `pip3 install -r requirements.txt`
