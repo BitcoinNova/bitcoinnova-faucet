@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block header %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <div class="content">
+      <div class="columns" style="justify-content: space-between; align-items: baseline;">
+      <h1 class="has-text-white is-capitalized has-text-weight-light is-size-1-fullhd" style="margin: 0">Bitcoin Nova Faucet</h1>
+      <h2 class="has-text-white is-capitalized has-text-weight-light is-size-5-fullhd" style="margin: 0;"><span id="numshells">{{ shells }}</span> BTNs remaining</h2>
+    </div>
+      <img src="{{ url_for('static', filename='img/bitcoinnova_logo.png') }}" class="image">
+      <form method="POST" action="{{ url_for('get_shells') }}" id="shellform">
+        {{ form.csrf_token }}
+        {{ form.fingerprint }}
+        <div class="field">
+          <label class="label has-text-centered">Enter Your Bitcoin Nova Address To Get Free BTNs!</label>
+          <div class="control" style="width: 75%; margin: auto;">
+           {{ form.address(class_="input",id="addressinput") }}
+          </div>
+        </div>
+        <p class="has-text-centered" style="overflow-wrap: break-word;">Donations: {{ addr }}</p>
+        <p>
+          {% for error in form.recaptcha.errors %}
+            {{ error }}
+          {% endfor %}
+          {{ form.recaptcha }}
+        </p>
+        <div class="control has-text-centered" style="margin: auto;">
+          <a class="button is-dark" id="getshells">Get Shells</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="notification-center">
+  <div class="notification is-info" id="successmessage">
+    <button class="delete"></button>
+    Success! BTNs have been sent :)
+  </div>
+  <div class="notification is-danger" id="errormessage">
+    <button class="delete"></button>
+    Error, something went wrong :(
+    <span id="err_message">UNKNOWN ERROR</span>
+  </div>
+</div>
+{% endblock %}
+{% block js %}
+  {{ super() }}
+  <script type="text/javascript">
+    var csrf_token = "{{ csrf_token() }}";
+  </script>
+  <script src="{{ url_for('static', filename='js/fg.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
