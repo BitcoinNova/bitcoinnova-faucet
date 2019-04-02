@@ -1,8 +1,9 @@
 Quickly thrown together faucet. Currently set to give out 10 BTN a pop. Limiting is set to 3 per day.
 
 ## Running this
-First make sure bitcoinnovad is running and fully sync'd.
-Then start `bitcoinnova-service` with these args:
+First make sure Bitcoinnovad is running and fully sync'd.
+Then start `Bitcoinnova-service` with these args:
+
 `./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpassword`
 
 
@@ -38,5 +39,5 @@ After that, run
 ```python
 python3 -c 'from faucet import db;db.create_all()'
 ```
-then `uwsgi --ini faucet.ini`. Make sure you have bitcoinnovad and bitcoinnova-service running.
+then `uwsgi --ini faucet.ini`. Make sure you have Bitcoinnovad and Bitcoinnova-service running.
 I left in the google analytics because I couldn't find a way to add that at deployment. Enjoy :)
