@@ -15,7 +15,7 @@ The file should look like this:
 module = wsgi:application
 socket = /tmp/uwsgi.sock
 chmod-socket = 666
-chdir  = /home/pool/bitcoinnova-faucet/
+chdir  = /home/**YourUser**/bitcoinnova-faucet/
 wsgi-file =wsgi.py
 master = true
 processes = 1
