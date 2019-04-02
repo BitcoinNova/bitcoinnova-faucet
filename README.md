@@ -11,6 +11,7 @@ Then start Bitcoinnova-service with these args:
 
 ### Install Requirements
 `sudo apt-get install python3`
+
 `pip3 install -r requirements.txt`
 
 You'll need to create a file called 'faucet.ini'.
