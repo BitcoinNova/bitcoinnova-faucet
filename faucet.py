@@ -54,7 +54,7 @@ db = SQLAlchemy(app)
 
 class Transfer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    destination = db.Column(db.String(99), nullable=False)
+    destination = db.Column(db.String(95), nullable=False)
     payment_id = db.Column(db.String(128), nullable=False)
     amount = db.Column(db.Integer, nullable=False)
     transfer_time = db.Column(db.DateTime, nullable=False,
