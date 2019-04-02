@@ -3,9 +3,9 @@ Quickly thrown together faucet. Currently set to give out 10 BTN. Limiting is se
 ## Running this
 First make sure Bitcoinnovad is running and fully sync'd.
 
-./Bitcoinnovad --enable-cors=* --enable-blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=45223 
+`./Bitcoinnovad --enable-cors=* --enable-blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=45223` 
 
-Then start `Bitcoinnova-service` with these args:
+Then start Bitcoinnova-service with these args:
 
 `./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpass`
 
