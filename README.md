@@ -1,13 +1,18 @@
-Quickly thrown together faucet. Currently set to give out 10 BTN a pop. Limiting is set to 3 per day.
+Quickly thrown together faucet. Currently set to give out 10 BTN. Limiting is set to 3 per day.
 
 ## Running this
 First make sure Bitcoinnovad is running and fully sync'd.
+
+./Bitcoinnovad --enable-cors=* --enable-blockexplorer --rpc-bind-ip=0.0.0.0 --rpc-bind-port=45223 
+
 Then start `Bitcoinnova-service` with these args:
 
-`./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpassword`
+`./Bitcoinnova-service -w walletname -p walletpass --bind-address 127.0.0.1 --bind-port 8070 --rpc-password rpcpass`
 
+### Install Requirements
 
 `pip3 install -r requirements.txt`
+
 You'll need to create a file called 'faucet.ini'.
 The file should look like this:
 ```ini
